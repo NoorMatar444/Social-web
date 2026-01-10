@@ -36,7 +36,7 @@ export default function Home() {
         <title>Home</title>
       </Helmet>
       <div className="container w-[60%] mx-auto text-center mt-7">
-        <div className="creatPost mb-7">
+        <div className="createPost mb-7">
           <CreatePost />
         </div>
         {data?.map((post) => (
