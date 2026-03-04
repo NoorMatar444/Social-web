@@ -21,7 +21,7 @@ export default function PostDetails() {
     select: (data) => data.data.post,
   });
   console.log(data);
-   if (isLoading)
+  if (isLoading)
     return (
       <div className="flex justify-center items-center h-screen">
         <div className="loader" />
@@ -39,9 +39,11 @@ export default function PostDetails() {
           <div className="image my-4 flex justify-center items-center">
             <img src={data.user.photo} alt="image"></img>
           </div>
-          <CreatComment postId={data._id}/>
+          <CreatComment postId={data._id} />
           <p>Body:{data.body}</p>
-          {data?.comments.map((comment)=><Comment comment={comment}/>)}
+          {data?.comments.map((comment) => (
+            <Comment comment={comment} />
+          ))}
         </div>
       </div>
     </>

@@ -15,7 +15,7 @@ export default function CreatePost() {
     // 🔑 Build FormData
     const formData = new FormData();
     formData.append("image", value.image[0]); // photo[0] = first file chosen
-
+    formData.append("body", value.body);
     axios
       .post(`https://linked-posts.routemisr.com/posts`, formData, {
         headers: {
