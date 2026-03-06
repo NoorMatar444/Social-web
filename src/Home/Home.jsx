@@ -14,7 +14,7 @@ export default function Home() {
 
   function getAllPosts() {
     
-    return axios.get(`/api/posts?limit=50`, {
+    return axios.get(`https://linked-posts.routemisr.com/posts?limit=50`, {
       headers: {
         token: token, 
       },

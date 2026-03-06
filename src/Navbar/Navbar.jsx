@@ -18,7 +18,7 @@ export default function Navbar() {
   }
 
   function getUserData() {
-    return axios.get(`/api/users/profile-data`, {
+    return axios.get(`https://linked-posts.routemisr.com/users/profile-data`, {
       headers: {
         // نرسل التوكن هنا
         token: currentToken, 
