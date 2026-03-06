@@ -7,24 +7,33 @@ import { useQuery } from "@tanstack/react-query";
 export default function Navbar() {
   const navigate = useNavigate();
   let { Token, setToken } = useContext(LoginContext);
+  
+  // استخراج التوكن ليكون استخدامه أسهل
+  const currentToken = localStorage.getItem("userToken");
+
   function signout() {
     localStorage.removeItem("userToken");
     setToken(null);
     navigate("/Login");
   }
+
   function getUserData() {
-    return axios.get(`https://linked-posts.routemisr.com/users/profile-data`, {
+    return axios.get(`/api/users/profile-data`, {
       headers: {
-        token: localStorage.getItem("userToken"),
+        // نرسل التوكن هنا
+        token: currentToken, 
       },
     });
   }
+
   let { data } = useQuery({
     queryKey: [`getUserData`],
     queryFn: getUserData,
-    select: (data) => data.data.user,
+    enabled: !!localStorage.getItem("userToken"),
+    select: (data) => data?.data?.user,
+    
+  
   });
-  console.log(data);
   return (
     <>
       <nav className="bg-white border-gray-200 dark:bg-gray-900">

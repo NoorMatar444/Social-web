@@ -4,7 +4,7 @@ import React from "react";
 
 export default function GetUserComments() {
   function getUserComments() {
-    return axios.get(`https://linked-posts.routemisr.com/users/profile-data`, {
+    return axios.get(`api/users/profile-data`, {
       headers: {
         token: localStorage.getItem("userToken"),
       },

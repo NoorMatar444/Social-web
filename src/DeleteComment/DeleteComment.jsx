@@ -9,7 +9,7 @@ function handleDeleteComment() {
   setisLoading(true);
 
   axios
-    .delete(`https://linked-posts.routemisr.com/comments/${id}`, {
+    .delete(`api/comments/${id}`, {
       headers: {
         token: localStorage.getItem("userToken"),
       },

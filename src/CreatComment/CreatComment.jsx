@@ -16,7 +16,7 @@ export default function CreatComment({ postId }) {
   function handleCreateComment(value) {
     SetisLoading(true);
     axios
-      .post(`https://linked-posts.routemisr.com/comments`, value, {
+      .post(`api/comments`, value, {
         headers: {
           token: localStorage.getItem("userToken"),
         },

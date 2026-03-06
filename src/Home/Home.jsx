@@ -9,19 +9,28 @@ import { Helmet } from "react-helmet";
 
 
 export default function Home() {
+  
+  const token = localStorage.getItem("userToken");
+
   function getAllPosts() {
-    return axios.get(`https://linked-posts.routemisr.com/posts?limit=50`, {
+    
+    return axios.get(`/api/posts?limit=50`, {
       headers: {
-        token: localStorage.getItem("userToken"),
+        token: token, 
       },
     });
   }
+
   let { data, isLoading, isError, error } = useQuery({
     queryKey: ["getAllPosts"],
     queryFn: getAllPosts,
+    enabled: !!localStorage.getItem("userToken"),
     select: (data) => data?.data?.posts,
   });
-  console.log(data);
+  if (!token) {
+    return <p className="text-center mt-10">برجاء تسجيل الدخول لرؤية المنشورات.</p>;
+  }
+
   if (isLoading)
     return (
       <div className="flex justify-center items-center h-screen">

@@ -15,7 +15,7 @@ export default function UpdateComment({ id }) {
   function handleUpdateComment(value) {
     SetisLoading(true);
     axios
-      .put(`https://linked-posts.routemisr.com/comments/${id}`, value, {
+      .put(`api/comments/${id}`, value, {
         headers: {
           token: localStorage.getItem("userToken"),
         },
