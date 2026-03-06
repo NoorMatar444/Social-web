@@ -71,7 +71,6 @@ export default function Register() {
         <h2 className="text-2xl font-semibold text-center mb-8">Register</h2>
 
         <form onSubmit={handleSubmit(handleRegister)} className="space-y-6">
-          
           <div className="relative z-0 w-full group">
             <input
               type="text"
@@ -94,7 +93,6 @@ export default function Register() {
             )}
           </div>
 
-          
           <div className="relative z-0 w-full group">
             <input
               type="email"
@@ -117,7 +115,6 @@ export default function Register() {
             )}
           </div>
 
-          
           <div className="relative z-0 w-full group">
             <input
               type="password"
@@ -140,7 +137,6 @@ export default function Register() {
             )}
           </div>
 
-          
           <div className="relative z-0 w-full group">
             <input
               type="password"
@@ -157,7 +153,6 @@ export default function Register() {
             </label>
           </div>
 
-          
           <div>
             <label className="text-sm text-gray-600">Date of birth</label>
             <input
@@ -174,30 +169,31 @@ export default function Register() {
               )}
           </div>
 
-          
           <div>
-            <p className="text-sm text-gray-600 mb-2">Gender</p>
+            <div className="flex flex-col items-center">
+              <p className="text-sm text-gray-600 mb-2">Gender</p>
 
-            <div className="flex gap-6">
-              <label className="flex items-center gap-2">
-                <input
-                  type="radio"
-                  {...register("gender")}
-                  value="male"
-                  className="accent-blue-600"
-                />
-                Male
-              </label>
+              <div className="flex gap-6 justify-center">
+                <label className="flex items-center gap-2">
+                  <input
+                    type="radio"
+                    {...register("gender")}
+                    value="male"
+                    className="accent-blue-600"
+                  />
+                  Male
+                </label>
 
-              <label className="flex items-center gap-2">
-                <input
-                  type="radio"
-                  {...register("gender")}
-                  value="female"
-                  className="accent-blue-600"
-                />
-                Female
-              </label>
+                <label className="flex items-center gap-2">
+                  <input
+                    type="radio"
+                    {...register("gender")}
+                    value="female"
+                    className="accent-blue-600"
+                  />
+                  Female
+                </label>
+              </div>
             </div>
 
             {formState.errors.gender && formState.touchedFields.gender && (
@@ -207,7 +203,6 @@ export default function Register() {
             )}
           </div>
 
-          
           <div className="pt-4 text-center">
             {isloading ? (
               <i className="fa-solid fa-spinner fa-spin text-2xl text-blue-600"></i>
