@@ -17,7 +17,7 @@ export default function CreatePost() {
     formData.append("image", value.image[0]); // photo[0] = first file chosen
     formData.append("body", value.body);
     axios
-      .post(`api/posts`, formData, {
+      .post(`https://linked-posts.routemisr.com/posts`, formData, {
         headers: {
           token: localStorage.getItem("userToken"),
           "Content-Type": "multipart/form-data",

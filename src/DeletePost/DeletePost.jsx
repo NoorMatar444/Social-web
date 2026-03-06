@@ -8,7 +8,7 @@ export default function DeletePost({ id }) {
   function deletePost(id) {
     setisLoading(true);
     return axios
-      .delete(`api/posts/${id}`, {
+      .delete(`https://linked-posts.routemisr.com/posts/${id}`, {
         headers: {
           token: localStorage.getItem("userToken"),
         },

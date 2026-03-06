@@ -51,7 +51,7 @@ export default function Register() {
     console.log(values);
     setIsloading(true);
     axios
-      .post(`api/users/signup`, values)
+      .post(`https://linked-posts.routemisr.com/users/signup`, values)
       .then((res) => {
         console.log(res);
         navigate("/Login");

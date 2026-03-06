@@ -9,7 +9,7 @@ import CreatComment from "./../CreatComment/CreatComment";
 
 export default function GetUserPosts({ id }) {
   function getUserPosts(id) {
-    return axios.get(`api/users/${id}/posts`, {
+    return axios.get(`https://linked-posts.routemisr.com/users/${id}/posts`, {
       headers: {
         token: localStorage.getItem("userToken"),
       },

@@ -19,7 +19,7 @@ export default function UploadPhoto() {
     formData.append("photo", value.photo[0]); // photo[0] = first file chosen
 
     axios
-      .put(`api/users/upload-photo`, formData, {
+      .put(`https://linked-posts.routemisr.com/users/upload-photo`, formData, {
         headers: {
           token: localStorage.getItem("userToken"),
           "Content-Type": "multipart/form-data",

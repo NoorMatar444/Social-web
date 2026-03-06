@@ -9,7 +9,7 @@ import { Helmet } from "react-helmet";
 export default function PostDetails() {
   let { id } = useParams();
   function getsinglepost(id) {
-    return axios.get(`api/posts/${id}`, {
+    return axios.get(`https://linked-posts.routemisr.com/posts/${id}`, {
       headers: {
         token: localStorage.getItem("userToken"),
       },

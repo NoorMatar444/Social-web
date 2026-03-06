@@ -15,7 +15,7 @@ export default function ChangePassword() {
     SetisLoading(true);
     axios
       .patch(
-        `api/users/change-password`,
+        `https://linked-posts.routemisr.com/api/users/change-password`,
         value,
         {
           headers: {
